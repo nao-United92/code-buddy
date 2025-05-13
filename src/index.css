@@ -1,13 +1,15 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.markdown pre {
+  @apply bg-gray-100 rounded p-[8px];
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.markdown pre code {
+  @apply block bg-transparent p-0 overflow-visible rounded-none w-full overflow-x-scroll;
+}
+
+.markdown h3 {
+  @apply leading-snug text-lg font-semibold mb-4 mt-6;
 }
