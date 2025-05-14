@@ -1,4 +1,4 @@
-const { default: axios } = require('axios');
+import axios from 'axios';
 
 class OpenaiClient {
   constructor() {
@@ -11,7 +11,7 @@ class OpenaiClient {
       messages,
     };
     const response = await axios.post(
-      'https://api.openai.com/v1/completions',
+      'https://api.openai.com/v1/chat/completions',
       requestData,
       {
         headers: {
@@ -23,5 +23,5 @@ class OpenaiClient {
     return response.data.choices[0].message.content;
   }
 }
-const oepnai = new OpenaiClient();
-export default oepnai;
+const openai = new OpenaiClient();
+export default openai;
